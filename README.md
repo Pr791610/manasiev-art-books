@@ -83,7 +83,25 @@ Creating a complete **Art Documentation System**
 ## 🏷 Author & Edition
 
 **N.M. MANASIA**  
-**N.M. EDITION**
+**N.M. ## 🔳 QR Codes
+
+Each artwork includes QR codes for easy access and verification:
+
+### 1️⃣ Full Book (500 pages)
+![Full Book QR](https://via.placeholder.com/150.png?text=Full+Book+QR)
+[Scan to view the full book](YOUR_FULL_BOOK_QR_LINK)
+
+### 2️⃣ Artwork Details
+![Artwork QR](https://via.placeholder.com/150.png?text=Artwork+QR)
+[Scan to view artwork details](YOUR_ARTWORK_QR_LINK)
+
+### 3️⃣ Collection Archive
+![Collection QR](https://via.placeholder.com/150.png?text=Collection+QR)
+[Scan to view the collection archive](YOUR_COLLECTION_QR_LINK)
+
+### 4️⃣ Secure Payment (Bank API)
+![Payment QR](https://via.placeholder.com/150.png?text=Payment+QR)
+[Scan to pay securely](YOUR_PAYMENT_QR_LINK)EDITION**
 
 ---
 
