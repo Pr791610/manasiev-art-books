@@ -92,7 +92,7 @@ Each artwork includes QR codes for easy access and verification:
 
 ### 2️⃣ Artwork Details
 ![Artwork QR](https://via.placeholder.com/150.png?text=Artwork+QR)
-[Scan to view artwork details]([YOUR_ARTWORK_QR_LINK](https://photos.app.goo.gl/ABQJB7ozGnYupKYa8))
+[Scan to view artwork details]((https://photos.app.goo.gl/ABQJB7ozGnYupKYa8))
 
 ### 3️⃣ Collection Archive
 ![Collection QR](https://via.placeholder.com/150.png?text=Collection+QR)
