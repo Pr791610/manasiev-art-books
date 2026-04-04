@@ -13,21 +13,7 @@ This project represents an integrated art system including:
 
 ## 🎨 Artwork Galleries
 
-### Gallery 1
-👉 https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8
-
-### Gallery 2
-👉 https://photos.app.goo.gl/2f6VNaoQKxzaphSz6
-
-### Gallery 3
-👉 https://photos.app.goo.gl/CTeesSisKaGpzfF36
-
-### Gallery 4
-👉 https://photos.app.goo.gl/ohFwwKX7voCLcjr58
-
-### Gallery 5
-👉 https://photos.app.goo.gl/yQ3mzfcGpuefnuyZA
-                                            ---
+### Gallery                                        ---
 
 ## 📖 Books
 
@@ -130,19 +116,7 @@ Professional integrated system combining:
 ## 🎨 Artwork Galleries
 
 👉 Gallery 1  
-https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8  
 
-👉 Gallery 2  
-https://photos.app.goo.gl/2f6VNaoQKxzaphSz6  
-
-👉 Gallery 3  
-https://photos.app.goo.gl/CTeesSisKaGpzfF36  
-
-👉 Gallery 4  
-https://photos.app.goo.gl/ohFwwKX7voCLcjr58  
-
-👉 Gallery 5  
-https://photos.app.goo.gl/yQ3mzfcGpuefnuyZA  
 
 ---
 
