@@ -147,7 +147,7 @@ Scan to view full collection
 
 ### 💳 Secure Payment
 Scan for direct payment system  
-👉 https://Pr791610.github.io/art-payment/
+https://buy.stripe.com/28E8wQeq4aUWfFPa1xcjS00
 
 ---
 
