@@ -86,7 +86,7 @@ Each artwork includes QR codes for easy access and verification:
 
 ### 4️⃣ Secure Payment (Bank API)
 ![Payment QR](https://via.placeholder.com/150.png?text=Payment+QR)
-[Scan to pay securely](YOUR_PAYMENT_QR_LINK)EDITION**
+[Scan to pay securely]([YOUR_PAYMENT_QR_LINK](<https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>))EDITION**
 
 ---
 
