@@ -186,5 +186,5 @@ tel.+38977676872
 ## ⚙️ Repository Structure
 
 ## 📬 Contact
-email.artbook.manas@yahoo.com artbook.manas@yahoo.it
+email.artbook.manas@yahoo.com 
 tel.+38977676872
