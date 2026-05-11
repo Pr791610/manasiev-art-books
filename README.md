@@ -16,7 +16,8 @@ This project represents an integrated art system including:
 ### Gallery                                        ---
 
 ## 📖 Books
-
+-
+<https://photos.app.goo.gl/So4rGCofCP2dpjfa8>
 # Macedonian Edition
 - Knowledge and Life – Vol. I
 
