@@ -45,7 +45,9 @@ Each artwork includes QR codes for:
 - 📚 Full Book (500 pages)
 - 🎨 Artwork Details
 - 🌐 Collection Archive
-- 💳 Secure Payment [(Bank API – coming soon)](https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA)
+- 💳 Secure Payment [(Bank API – coming soon)]
+- <https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
+- 
 
 ---
 
@@ -103,7 +105,9 @@ Each artwork includes QR codes for easy access and verification:
 ![Payment QR]
 -
 <https://via.placeholder.com/150.png?text=Payment+QR>
-[Scan to pay securely]([https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA]
+[Scan to pay securely]
+<
+https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
 -
 <https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
 -
