@@ -156,7 +156,9 @@ Each artwork includes QR codes for easy access and verification:
 -
 <https://via.placeholder.com/150.png?text=Collection+QR>
 -
-[[Scan to view the collection](https://photos.app.goo.gl/x7GXm8pN2DJnzra66) 
+[[Scan to view the collection]
+-
+<https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
 
 -
 <https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8>
@@ -168,7 +170,7 @@ Each artwork includes QR codes for easy access and verification:
 
 -
 <archive]https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
-
+-
 
 ### 4️⃣ Secure Payment (Bank API)
 ![Payment QR]
@@ -180,8 +182,8 @@ Each artwork includes QR codes for easy access and verification:
 
 [Scan to pay securely]
 
-<
-https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
+-
+<https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
 
 -
 <https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
