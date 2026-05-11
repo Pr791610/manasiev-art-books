@@ -152,27 +152,37 @@ Each artwork includes QR codes for easy access and verification:
 <https://photos.app.goo.gl/ABQJB7ozGnYupKYa8>
 
 ### 3️⃣ Collection Archive
-![Collection QR]
+![[Collection QR](https://photos.app.goo.gl/jwtnYPYzffY1PVAg8)]
 -
 <https://via.placeholder.com/150.png?text=Collection+QR>
 -
-[Scan to view the collection 
+[[Scan to view the collection](https://photos.app.goo.gl/x7GXm8pN2DJnzra66) 
+
+-
+<https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8>
+
+-<https://photos.app.goo.gl/2f6VNaoQKxzaphSz6>
+
+-
+<https://photos.app.goo.gl/CTeesSisKaGpzfF36>
 
 -
 <archive]https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
--
+
 
 ### 4️⃣ Secure Payment (Bank API)
 ![Payment QR]
--
 
-<https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
+-<https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
 
 -
 <https://via.placeholder.com/150.png?text=Payment+QR>
+
 [Scan to pay securely]
+
 <
 https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
+
 -
 <https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
 -
@@ -207,7 +217,14 @@ Professional integrated system combining:
 
 👉 Gallery 1  
 
+-
+<https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8>
 
+-<https://photos.app.goo.gl/2f6VNaoQKxzaphSz6>
+
+-
+<https://photos.app.goo.gl/CTeesSisKaGpzfF36>
+-
 ---
 
 ## 📄 Certificates System
