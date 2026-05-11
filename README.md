@@ -27,7 +27,8 @@ This project represents an integrated art system including:
 ---
 
 ## 📄 Certificates
-
+-
+<https://photos.app.goo.gl/6yoKTJz8FgUqN5Qq9>
 Each artwork includes:
 - 7-page certificate
 - Signed authenticity proof
