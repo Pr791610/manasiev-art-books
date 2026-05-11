@@ -85,10 +85,13 @@ Each artwork includes QR codes for easy access and verification:
 ![Artwork QR]
 -
 <https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8>
+
 -<https://photos.app.goo.gl/2f6VNaoQKxzaphSz6>
+
 -
 <https://photos.app.goo.gl/CTeesSisKaGpzfF36>
 -
+
 (https://via.placeholder.com/150.png?text=Artwork+QR)
 [Scan to view artwork details]
 -
