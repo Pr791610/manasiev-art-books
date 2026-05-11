@@ -156,7 +156,11 @@ Each artwork includes QR codes for easy access and verification:
 -
 <https://via.placeholder.com/150.png?text=Collection+QR>
 -
-[Scan to view the collection archive](YOUR_COLLECTION_QR_LINK)
+[Scan to view the collection 
+
+-
+<archive]https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
+-
 
 ### 4️⃣ Secure Payment (Bank API)
 ![Payment QR]
