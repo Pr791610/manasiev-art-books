@@ -80,21 +80,39 @@ Each artwork includes QR codes for easy access and verification:
 [Scan to view the full book](YOUR_FULL_BOOK_QR_LINK)
 
 ### 2️⃣ Artwork Details
-![Artwork QR](https://via.placeholder.com/150.png?text=Artwork+QR)
-[Scan to view artwork details]((https://photos.app.goo.gl/ABQJB7ozGnYupKYa8))
+![Artwork QR]
+-
+<https://photos.app.goo.gl/iwj5hKfmcGYeFUnv8>
+-<https://photos.app.goo.gl/2f6VNaoQKxzaphSz6>
+-
+<https://photos.app.goo.gl/CTeesSisKaGpzfF36>
+-
+(https://via.placeholder.com/150.png?text=Artwork+QR)
+[Scan to view artwork details]
+-
+<https://photos.app.goo.gl/ABQJB7ozGnYupKYa8>
 
 ### 3️⃣ Collection Archive
-![Collection QR](https://via.placeholder.com/150.png?text=Collection+QR)
+![Collection QR]
+-
+<https://via.placeholder.com/150.png?text=Collection+QR>
+-
 [Scan to view the collection archive](YOUR_COLLECTION_QR_LINK)
 
 ### 4️⃣ Secure Payment (Bank API)
-![Payment QR](https://via.placeholder.com/150.png?text=Payment+QR)
-[Scan to pay securely]([https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA](https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA))EDITION**
+![Payment QR]
+-
+<https://via.placeholder.com/150.png?text=Payment+QR>
+[Scan to pay securely]([https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA]
+-
+<https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
+-
+EDITION**
 
 ---
 
 ## 📬 Contact
-
+emailto.artbook.manas@yahoo.com 
 email.manasievnikola79@gmail.com
 tel.+38977676872
 # N.M. MANASIA – Art Payment & Book System
