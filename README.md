@@ -15,9 +15,7 @@ This project represents an integrated art system including:
 
 ### Gallery                                        ---
 
-## 📖 ([<https://photos.app.goo.gl/2pZhsKwRE4L4ApDs7>
--
-<https://photos.app.goo.gl/So4rGCofCP2dpjfa8>])  
+## 📖 Books  
 -
 <https://photos.app.goo.gl/2pZhsKwRE4L4ApDs7>
 -
