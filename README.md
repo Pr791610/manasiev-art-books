@@ -179,7 +179,7 @@ Each artwork includes QR codes for easy access and verification:
 <https://photos.app.goo.gl/CTeesSisKaGpzfF36>
 
 -
-<archive]https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
+<https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
 -
 
 ### 4️⃣ Secure Payment ![[[Bank API]
