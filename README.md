@@ -144,6 +144,7 @@ Each artwork includes QR codes for easy access and verification:
 
 [Scan to view the full book](YOUR_FULL_BOOK_QR_LINK)
 
+
 ### 2️⃣ Artwork Details
 ![Artwork QR]
 -
@@ -155,13 +156,16 @@ Each artwork includes QR codes for easy access and verification:
 <https://photos.app.goo.gl/CTeesSisKaGpzfF36>
 -
 
-(https://via.placeholder.com/150.png?text=Artwork+QR)
 [Scan to view artwork details]
+
 -
 <https://photos.app.goo.gl/ABQJB7ozGnYupKYa8>
-
+-
 ### 3️⃣ Collection Archive
-![[[Collection QR](https://photos.app.goo.gl/jwtnYPYzffY1PVAg8)]
+![[[Collection QR]
+
+-
+<https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
 -
 <https://via.placeholder.com/150.png?text=Collection+QR>
 -
@@ -187,7 +191,7 @@ Each artwork includes QR codes for easy access and verification:
 -<https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
 
 -
-<https://via.placeholder.com/150.png?text=Payment+QR>
+
 
 [Scan to pay securely]
 
@@ -197,6 +201,7 @@ Each artwork includes QR codes for easy access and verification:
 -
 <https://photos.app.goo.gl/M8tDvk8xx4AkeuJFA>
 -
+
 EDITION**
 
 ---
@@ -270,6 +275,8 @@ Scan for direct payment system
 -   <https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01>
 - <https://buy.stripe.com/4gM6oIa9Oe78eBL4HdcjS02>
 - <https://buy.stripe.com/dRm5kE3Lq7IK2T3ehNcjS03>
+- 
+
 
 ---
 
@@ -303,7 +310,7 @@ Creating a complete:
 # BAY NOW
 -
 <https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
-
+-
 
 ---
 email.manasievnikola79@gmail.com
