@@ -162,9 +162,8 @@ Each artwork includes QR codes for easy access and verification:
 <https://photos.app.goo.gl/ABQJB7ozGnYupKYa8>
 -
 ### 3️⃣ Collection Archive
-![[[Collection QR]
--
-<https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
+![[[Collection QR].
+(https://photos.app.goo.gl/jwtnYPYzffY1PVAg8)
 -
 <https://via.placeholder.com/150.png?text=Collection+QR>
 -
