@@ -1,7 +1,6 @@
 # manasiev-art-books
 eCommerce web platform for sale of books and artistic works, including QR payments and card payment integration (Bankart gateway ready).
--
-<BAY NOW>
+
 # N.M. MANASIA – Art Books System
 
 ## 📚 Overview
@@ -293,6 +292,12 @@ Creating a complete:
 
 **N.M. MANASIA**  
 **N.M. EDITION**
+
+
+# BAY NOW
+-
+<https://photos.app.goo.gl/x7GXm8pN2DJnzra66>
+
 
 ---
 email.manasievnikola79@gmail.com
