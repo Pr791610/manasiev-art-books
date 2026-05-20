@@ -21,6 +21,7 @@ This project represents an integrated art system including:
 <https://photos.app.goo.gl/2pZhsKwRE4L4ApDs7>
 -
 <https://photos.app.goo.gl/So4rGCofCP2dpjfa8>
+-
 # Macedonian Edition
 - Knowledge and Life – Vol. I
 
@@ -30,8 +31,10 @@ This project represents an integrated art system including:
 ---
 
 ## 📄 Certificates
+
 -
 <https://photos.app.goo.gl/6yoKTJz8FgUqN5Qq9>
+-
 
 Each artwork includes:
 - 7-page certificate
@@ -135,7 +138,10 @@ Each artwork includes QR codes for easy access and verification:
 
 
 ### 1️⃣ Full Book (500 pages)
-![Full Book QR](https://via.placeholder.com/150.png?text=Full+Book+QR)
+![Full Book QR]
+
+(https://via.placeholder.com/150.png?text=Full+Book+QR)
+
 [Scan to view the full book](YOUR_FULL_BOOK_QR_LINK)
 
 ### 2️⃣ Artwork Details
