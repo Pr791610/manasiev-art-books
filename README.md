@@ -163,7 +163,6 @@ Each artwork includes QR codes for easy access and verification:
 -
 ### 3️⃣ Collection Archive
 ![[[Collection QR]
-
 -
 <https://photos.app.goo.gl/jwtnYPYzffY1PVAg8>
 -
