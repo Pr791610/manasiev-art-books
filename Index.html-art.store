@@ -1,0 +1,82 @@
+# ART & BOOKS – HTML GENERATOR SYSTEM
+
+## 1. index.html
+
+```html
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART & BOOKS – Digital Certificates</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:#fff;
+padding:20px;
+text-align:center;
+}
+.card{
+background:#1d1d1d;
+padding:20px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+img{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+}
+.button{
+display:inline-block;
+padding:14px 24px;
+background:#fff;
+color:#000;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+.code{
+font-size:22px;
+margin-bottom:10px;
+}
+.desc{
+font-size:15px;
+line-height:1.6;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<img src="IMAGE_URL_HERE" alt="Artwork">
+
+<div class="code">
+art&books.w.c/N° ITMK001
+</div>
+
+<h2>
+Digital Art Certificate
+</h2>
+
+<div class="desc">
+Дигитален уметнички сертификат / Digital Art Certificate / Certificato d’Arte Digitale. Овој продукт припаѓа на лимитирана нумерирана колекција од Art & Books системот. Секој број претставува уникатно Canva дигитално уметничко дело поврзано со концепт на идентитет, структура и автентичност. Instant access / Accesso immediato.
+</div>
+
+<a class="button" href="STRIPE_URL_HERE" target="_blank">
+BUY NOW
+</a>
+
+</div>
+
+</body>
+</html>
+```
+
+--...
+
