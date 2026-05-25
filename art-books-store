@@ -1,0 +1,278 @@
+# ART & BOOKS – HTML GENERATOR SYSTEM
+
+## 1. index.html
+
+```html
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART & BOOKS – Digital Certificates</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:#fff;
+padding:20px;
+text-align:center;
+}
+.card{
+background:#1d1d1d;
+padding:20px;
+border-radius:20px;
+max-width:700px;
+margin:auto;
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+}
+img{
+width:100%;
+border-radius:15px;
+margin-bottom:20px;
+}
+.button{
+display:inline-block;
+padding:14px 24px;
+background:#fff;
+color:#000;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+.code{
+font-size:22px;
+margin-bottom:10px;
+}
+.desc{
+font-size:15px;
+line-height:1.6;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<img src="IMAGE_URL_HERE" alt="Artwork">
+
+<div class="code">
+art&books.w.c/N° ITMK001
+</div>
+
+<h2>
+Digital Art Certificate
+</h2>
+
+<div class="desc">
+Дигитален уметнички сертификат / Digital Art Certificate / Certificato d’Arte Digitale. Овој продукт припаѓа на лимитирана нумерирана колекција од Art & Books системот. Секој број претставува уникатно Canva дигитално уметничко дело поврзано со концепт на идентитет, структура и автентичност. Instant access / Accesso immediato.
+</div>
+
+<a class="button" href="STRIPE_URL_HERE" target="_blank">
+BUY NOW
+</a>
+
+</div>
+
+</body>
+</html>
+```
+
+---
+
+# 2. HOW TO USE
+
+## STEP 1
+
+Create folder:
+
+```txt
+art-books-store
+```
+
+---
+
+## STEP 2
+
+Inside folder create:
+
+```txt
+index.html
+```
+
+Paste the HTML code.
+
+---
+
+## STEP 3
+
+Replace:
+
+```txt
+IMAGE_URL_HERE
+```
+
+with Canva or Google Photos image.
+
+Example:
+
+```txt
+https://photos.app.goo.gl/RC2xLTT54CdoYAvH9
+```
+
+---
+
+## STEP 4
+
+Replace:
+
+```txt
+STRIPE_URL_HERE
+```
+
+with Stripe payment URL.
+
+Example:
+
+```txt
+https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01
+```
+
+---
+
+## STEP 5
+
+Change coupon number:
+
+```txt
+art&books.w.c/N° ITMK001
+```
+
+Example:
+
+```txt
+art&books.w.c/N° ITMK163
+```
+
+---
+
+# 3. GITHUB STRUCTURE
+
+```txt
+art-books-store/
+│
+├── index.html
+├── images/
+│   ├── ITMK001.webp
+│   ├── ITMK002.webp
+│   └── MK001.webp
+│
+└── certificates/
+    ├── ITMK001.pdf
+    ├── ITMK002.pdf
+    └── MK001.pdf
+```
+
+---
+
+# 4. NETLIFY DEPLOY
+
+## Upload to:
+
+GitHub repository.
+
+Then connect repository to Netlify.
+
+Build settings:
+
+```txt
+Build command:
+(none)
+
+Publish directory:
+/
+```
+
+---
+
+# 5. DUPLICATE SYSTEM
+
+For every coupon create:
+
+```txt
+ITMK001.html
+ITMK002.html
+ITMK003.html
+MK001.html
+MK002.html
+```
+
+Each file contains:
+
+* correct image
+* correct Stripe URL
+* correct coupon number
+
+---
+
+# 6. READY PRODUCT TEXT
+
+```txt
+art&books.w.c/N° ITMK – Дигитален уметнички сертификат / Digital Art Certificate / Certificato d’Arte Digitale. Овој продукт припаѓа на лимитирана нумерирана колекција од Art & Books системот. Секој број претставува уникатно Canva дигитално уметничко дело поврзано со концепт на идентитет, структура и автентичност. Instant access / Accesso immediato.
+```
+
+---
+
+# 7. EXAMPLE READY PAGE
+
+```txt
+Coupon:
+art&books.w.c/N° ITMK163
+
+Image:
+https://photos.app.goo.gl/RC2xLTT54CdoYAvH9
+
+Stripe:
+https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01
+```
+
+---
+
+# 8. FILE NAMING SYSTEM
+
+```txt
+ITMK001.html
+ITMK002.html
+ITMK003.html
+...
+MK001.html
+MK002.html
+...
+IT001.html
+...
+D001.html
+```
+
+---
+
+# 9. SERIES STRUCTURE
+
+```txt
+ITMK = International Macedonia Collection
+MK = Macedonia Collection
+IT = Italia Collection
+D = Digital Collection
+```
+
+---
+
+# 10. READY FOR:
+
+* GitHub
+* Netlify
+* Stripe
+* Canva
+* PDF certificates
+* WEBP images
+* Mobile touch support
+* Digital archive system
