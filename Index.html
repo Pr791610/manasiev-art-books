@@ -200,3 +200,70 @@ document.getElementById("search").addEventListener("input", e=>{
 
 </body>
 </html>
+<section class="gallery">
+
+  <div class="art-card">
+
+    <img src="images/ITMK001.webp" alt="ITMK001">
+
+    <h2>“La conoscenza e la vita”</h2>
+
+    <p>ART & BOOKS COLLECTION</p>
+
+    <a href="docs/qr/artbooks_qr_codici_dela_v1.pdf" target="_blank">
+      OPEN PDF
+    </a>
+
+    <a href="https://buy.stripe.com/yourlink" target="_blank">
+      BUY
+    </a>
+
+  </div>
+
+</section>
+<style>
+
+body{
+background:#000;
+color:#fff;
+font-family:Arial;
+margin:0;
+padding:0;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.art-card{
+background:#111;
+padding:15px;
+border-radius:20px;
+text-align:center;
+}
+
+.art-card img{
+width:100%;
+border-radius:15px;
+}
+
+.art-card a{
+display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+background:#fff;
+color:#000;
+text-decoration:none;
+border-radius:10px;
+}
+
+</style>
+/images/
+/docs/qr/
+/certificates/
+/thumbs/
+/html/
+index.html
