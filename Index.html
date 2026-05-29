@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART & BOOKS PLATFORM</title>
+
+<style>
+body{
+  margin:0;
+  background:#0b0b0b;
+  color:#fff;
+  font-family:Arial;
+}
+
+/* HEADER */
+header{
+  padding:40px;
+  text-align:center;
+  font-size:34px;
+  background:#111;
+  letter-spacing:2px;
+}
+
+/* SEARCH */
+input{
+  width:90%;
+  display:block;
+  margin:20px auto;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+}
+
+/* SECTION */
+section{
+  padding:20px;
+}
+
+h2{
+  border-left:4px solid #fff;
+  padding-left:10px;
+}
+
+/* GRID */
+.grid{
+  columns:280px;
+  column-gap:15px;
+}
+
+.card{
+  break-inside:avoid;
+  margin-bottom:15px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#1a1a1a;
+}
+
+.card img{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+a.btn{
+  display:block;
+  margin:8px 0;
+  padding:12px;
+  background:#1a1a1a;
+  border-radius:8px;
+  color:#fff;
+  text-decoration:none;
+}
+
+a.btn:hover{
+  background:#333;
+}
+</style>
+</head>
+
+<body>
+
+<header>ART & BOOKS — MAX PLATFORM</header>
+
+<input id="search" placeholder="Search links...">
+
+<section>
+<h2>GALLERY</h2>
+<div class="grid" id="gallery"></div>
+</section>
+
+<section>
+<h2>PAYMENTS</h2>
+<div id="payments"></div>
+</section>
+
+<section>
+<h2>PROJECTS</h2>
+<div id="projects"></div>
+</section>
+
+<section>
+<h2>TOOLS / APPS</h2>
+<div id="apps"></div>
+</section>
+
+<script>
+
+/* =========================
+   MASTER DATA (ADD EVERYTHING HERE)
+   ========================= */
+
+const DATA = [
+
+/* PHOTOS */
+"https://photos.app.goo.gl/K6FJDSuc38LGfEtu6",
+"https://photos.app.goo.gl/TpxWzz44Cbg6aPhp8",
+"https://photos.app.goo.gl/5Ayiff1SDVoKoBzg6-",
+"https://photos.app.goo.gl/1rg4WANEdg1gb3Ut8",
+"https://photos.app.goo.gl/PntNorQxA2EmgS2H6",
+
+/* STRIPE */
+"https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
+"https://buy.stripe.com/28E8wQeq4aUWfFPa1xcjS00",
+"https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01",
+"https://buy.stripe.com/4gM6oIa9Oe78eBL4HdcjS02",
+
+/* WISE */
+"https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
+
+/* GITHUB */
+"https://github.com/Pr791610/art-books-sandbox-system",
+"https://github.com/Pr791610/manasiev-art-books",
+"https://github.com/Pr791610/LOBO_DRACONIS",
+
+/* APPS */
+"https://agent-6a0e4f747--qr-art-vault-art-cod-collection.netlify.app",
+"https://art-books-cupon-valore.netlify.app",
+
+/* BANK */
+"https://www.nlb.mk/direct_payment"
+
+];
+
+/* =========================
+   ENGINE (AUTO SORT)
+   ========================= */
+
+const gallery = document.getElementById("gallery");
+const payments = document.getElementById("payments");
+const projects = document.getElementById("projects");
+const apps = document.getElementById("apps");
+
+function render(filter=""){
+
+  gallery.innerHTML="";
+  payments.innerHTML="";
+  projects.innerHTML="";
+  apps.innerHTML="";
+
+  DATA
+  .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
+  .forEach(url => {
+
+    // GALLERY
+    if(url.includes("photos.app")){
+      const d=document.createElement("div");
+      d.className="card";
+      d.innerHTML=`<img src="${url}">`;
+      gallery.appendChild(d);
+    }
+
+    // PAYMENTS
+    else if(url.includes("stripe") || url.includes("wise")){
+      payments.innerHTML += `<a class="btn" href="${url}" target="_blank">💳 Payment Link</a>`;
+    }
+
+    // PROJECTS
+    else if(url.includes("github")){
+      projects.innerHTML += `<a class="btn" href="${url}" target="_blank">🧠 Project</a>`;
+    }
+
+    // APPS / OTHER
+    else{
+      apps.innerHTML += `<a class="btn" href="${url}" target="_blank">🔗 Open</a>`;
+    }
+
+  });
+}
+
+render();
+
+/* SEARCH */
+document.getElementById("search").addEventListener("input", e=>{
+  render(e.target.value);
+});
+
+</script>
+
+</body>
+</html>
