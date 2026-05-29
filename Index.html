@@ -297,6 +297,13 @@ document.getElementById("search").addEventListener("input",e=>{
   renderPlatform(e.target.value);
 });
 
+<script>
+function openLightbox(img,title){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=img;
+  document.getElementById("lightbox-title").innerText=title;
+}
+  
 </script>
 
 </body>
