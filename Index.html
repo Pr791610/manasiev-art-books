@@ -3,23 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ART & BOOKS PLATFORM</title>
+<title>ART & BOOKS.w.c — PERSONAL MUSEUM</title>
 
 <style>
 body{
   margin:0;
-  background:#0b0b0b;
+  background:#070707;
   color:#fff;
   font-family:Arial;
 }
 
 /* HEADER */
 header{
-  padding:40px;
+  padding:45px;
   text-align:center;
-  font-size:34px;
+  font-size:28px;
+  letter-spacing:4px;
   background:#111;
-  letter-spacing:2px;
+}
+
+/* SUBTITLE */
+.sub{
+  text-align:center;
+  color:#aaa;
+  margin-top:-20px;
+  margin-bottom:20px;
+  font-size:13px;
 }
 
 /* SEARCH */
@@ -30,271 +39,265 @@ input{
   padding:12px;
   border-radius:8px;
   border:none;
-  font-size:16px;
 }
 
-/* SECTION */
-section{
-  padding:20px;
-}
-
+/* SECTION TITLE */
 h2{
+  margin-left:20px;
   border-left:4px solid #fff;
   padding-left:10px;
 }
 
-/* GRID */
+/* ART GRID */
 .grid{
-  columns:280px;
+  columns:300px;
   column-gap:15px;
+  padding:20px;
 }
 
+/* CARD */
 .card{
-  break-inside:avoid;
+  background:#151515;
   margin-bottom:15px;
   border-radius:12px;
   overflow:hidden;
-  background:#1a1a1a;
+  break-inside:avoid;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.02);
 }
 
 .card img{
   width:100%;
-  display:block;
+  cursor:pointer;
 }
 
-/* BUTTONS */
-a.btn{
+/* TEXT BLOCK */
+.info{
+  padding:10px;
+}
+
+.code{
+  color:#9ad1ff;
+  font-weight:bold;
+  font-size:13px;
+}
+
+.title{
+  font-size:15px;
+  margin-top:5px;
+}
+
+.subtitle{
+  font-size:12px;
+  color:#aaa;
+}
+
+/* BUTTON */
+.btn{
   display:block;
-  margin:8px 0;
-  padding:12px;
+  padding:10px;
+  margin:6px;
+  text-align:center;
   background:#1a1a1a;
-  border-radius:8px;
   color:#fff;
   text-decoration:none;
+  border-radius:8px;
 }
 
-a.btn:hover{
+.btn:hover{
   background:#333;
+}
+
+/* LIGHTBOX */
+#lightbox{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:999;
+}
+
+#lightbox img{
+  max-width:90%;
+  max-height:80%;
+  border-radius:10px;
+}
+
+#lightbox span{
+  margin-top:10px;
+  color:#ccc;
 }
 </style>
 </head>
 
 <body>
 
-<header>ART & BOOKS — MAX PLATFORM</header>
+<header>ART & BOOKS.w.c</header>
+<div class="sub">Personal Museum • Archive System • MK / IT / ITMK / D Collection</div>
 
-<input id="search" placeholder="Search links...">
+<input id="search" placeholder="Search ART / PAYMENTS / PROJECTS / APPS">
 
-<section>
-<h2>GALLERY</h2>
-<div class="grid" id="gallery"></div>
-</section>
+<!-- ART -->
+<h2>ART ARCHIVE</h2>
+<div class="grid" id="art"></div>
 
-<section>
-<h2>PAYMENTS</h2>
+<!-- PAYMENTS -->
+<h2>COLLECTION / PAYMENTS</h2>
 <div id="payments"></div>
-</section>
 
-<section>
-<h2>PROJECTS</h2>
+<!-- PROJECTS -->
+<h2>PROJECTS VAULT</h2>
 <div id="projects"></div>
-</section>
 
-<section>
-<h2>TOOLS / APPS</h2>
+<!-- APPS -->
+<h2>SYSTEM LINKS</h2>
 <div id="apps"></div>
-</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img">
+  <span id="lightbox-title"></span>
+</div>
 
 <script>
 
 /* =========================
-   MASTER DATA (ADD EVERYTHING HERE)
-   ========================= */
+   PERSONAL ART ARCHIVE (YOUR STYLE)
+========================= */
+
+const ART = [
+{
+img:"images/mk241.jpg",
+code:"ITMK241",
+title:"Значење и Живот",
+subtitle:"La Conoscenza e la Vita • Dual Language Archive",
+series:"ITMK"
+},
+{
+img:"images/it242.jpg",
+code:"IT242",
+title:"Spectrum of Existence",
+subtitle:"Abstract Energy Field Composition",
+series:"IT"
+},
+{
+img:"images/frozen.jpg",
+code:"IT243",
+title:"Frozen Memory",
+subtitle:"Time • Ice • Light Structure",
+series:"IT"
+},
+{
+img:"images/flowers.jpg",
+code:"IT244",
+title:"Flowers of Silence",
+subtitle:"Nature Memory / Emotional Contrast",
+series:"IT"
+},
+{
+img:"images/d007.jpg",
+code:"D007",
+title:"DRACONIS CORE",
+subtitle:"Dark Archive / Symbolic System",
+series:"D"
+}
+];
+
+/* =========================
+   PLATFORM SYSTEM
+========================= */
 
 const DATA = [
 
-/* PHOTOS */
-"https://photos.app.goo.gl/K6FJDSuc38LGfEtu6",
-"https://photos.app.goo.gl/TpxWzz44Cbg6aPhp8",
-"https://photos.app.goo.gl/5Ayiff1SDVoKoBzg6-",
-"https://photos.app.goo.gl/1rg4WANEdg1gb3Ut8",
-"https://photos.app.goo.gl/PntNorQxA2EmgS2H6",
-
-/* STRIPE */
+/* PAYMENTS */
 "https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
-"https://buy.stripe.com/28E8wQeq4aUWfFPa1xcjS00",
-"https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01",
-"https://buy.stripe.com/4gM6oIa9Oe78eBL4HdcjS02",
-
-/* WISE */
 "https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
 
-/* GITHUB */
+/* PROJECTS */
 "https://github.com/Pr791610/art-books-sandbox-system",
 "https://github.com/Pr791610/manasiev-art-books",
-"https://github.com/Pr791610/LOBO_DRACONIS",
 
 /* APPS */
-"https://agent-6a0e4f747--qr-art-vault-art-cod-collection.netlify.app",
 "https://art-books-cupon-valore.netlify.app",
-
-/* BANK */
-"https://www.nlb.mk/direct_payment"
+"https://qr-art-certificate-system.netlify.app"
 
 ];
 
 /* =========================
-   ENGINE (AUTO SORT)
-   ========================= */
+   RENDER ART
+========================= */
 
-const gallery = document.getElementById("gallery");
-const payments = document.getElementById("payments");
-const projects = document.getElementById("projects");
-const apps = document.getElementById("apps");
+const artDiv=document.getElementById("art");
 
-function render(filter=""){
+function renderArt(){
+  artDiv.innerHTML="";
+  ART.forEach(a=>{
+    artDiv.innerHTML+=`
+    <div class="card">
+      <img src="${a.img}" onclick="openLightbox('${a.img}','${a.title}')">
+      <div class="info">
+        <div class="code">N° ${a.code}</div>
+        <div class="title">${a.title}</div>
+        <div class="subtitle">${a.subtitle}</div>
+      </div>
+    </div>`;
+  });
+}
+renderArt();
 
-  gallery.innerHTML="";
-  payments.innerHTML="";
-  projects.innerHTML="";
-  apps.innerHTML="";
+/* =========================
+   PLATFORM ENGINE
+========================= */
+
+function renderPlatform(filter=""){
+
+  document.getElementById("payments").innerHTML="";
+  document.getElementById("projects").innerHTML="";
+  document.getElementById("apps").innerHTML="";
 
   DATA
-  .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
-  .forEach(url => {
+  .filter(u=>u.toLowerCase().includes(filter.toLowerCase()))
+  .forEach(url=>{
 
-    // GALLERY
-    if(url.includes("photos.app")){
-      const d=document.createElement("div");
-      d.className="card";
-      d.innerHTML=`<img src="${url}">`;
-      gallery.appendChild(d);
+    if(url.includes("stripe")||url.includes("wise")){
+      payments.innerHTML+=`<a class="btn" href="${url}" target="_blank">💳 Payment System</a>`;
     }
 
-    // PAYMENTS
-    else if(url.includes("stripe") || url.includes("wise")){
-      payments.innerHTML += `<a class="btn" href="${url}" target="_blank">💳 Payment Link</a>`;
-    }
-
-    // PROJECTS
     else if(url.includes("github")){
-      projects.innerHTML += `<a class="btn" href="${url}" target="_blank">🧠 Project</a>`;
+      projects.innerHTML+=`<a class="btn" href="${url}" target="_blank">🧠 Repository</a>`;
     }
 
-    // APPS / OTHER
     else{
-      apps.innerHTML += `<a class="btn" href="${url}" target="_blank">🔗 Open</a>`;
+      apps.innerHTML+=`<a class="btn" href="${url}" target="_blank">🔗 Open System</a>`;
     }
 
   });
 }
+renderPlatform();
 
-render();
+/* =========================
+   LIGHTBOX
+========================= */
+
+function openLightbox(img,title){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=img;
+  document.getElementById("lightbox-title").innerText=title;
+}
 
 /* SEARCH */
-document.getElementById("search").addEventListener("input", e=>{
-  render(e.target.value);
+document.getElementById("search").addEventListener("input",e=>{
+  renderPlatform(e.target.value);
 });
 
 </script>
 
 </body>
 </html>
-<section class="gallery">
-
-  <div class="art-card">
-
-    <img src="images/ITMK001.webp" alt="ITMK001">
-
-    <h2>“La conoscenza e la vita”</h2>
-
-    <p>ART & BOOKS COLLECTION</p>
-
-    <a href="docs/qr/artbooks_qr_codici_dela_v1.pdf" target="_blank">
-      OPEN PDF
-    </a>
-
-    <a href="https://buy.stripe.com/yourlink" target="_blank">
-      BUY
-    </a>
-
-  </div>
-
-</section>
-<style>
-
-body{
-background:#000;
-color:#fff;
-font-family:Arial;
-margin:0;
-padding:0;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-padding:20px;
-}
-
-.art-card{
-background:#111;
-padding:15px;
-border-radius:20px;
-text-align:center;
-}
-
-.art-card img{
-width:100%;
-border-radius:15px;
-}
-
-.art-card a{
-display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:#fff;
-color:#000;
-text-decoration:none;
-border-radius:10px;
-}
-
-</style>
-/images/
-/docs/qr/
-/certificates/
-/thumbs/
-/html/
-index.html
-<hr style="margin:50px 0; border:1px solid #333;">
-
-<h2 style="text-align:center; letter-spacing:2px;">
-ART & BOOKS.w.c ARCHIVE
-</h2>
-
-<div class="grid">
-
-  <div class="card" data-series="MK" data-id="241">
-    <img src="images/mk241.jpg" class="art-image" onclick="openLightbox('images/mk241.jpg','Значење и Живот')">
-    <div class="code">N° MK241</div>
-    <div class="title">Значење и Живот</div>
-    <div class="subtitle">La Conoscenza e la Vita</div>
-    <div class="series">Series: MK / ITMK</div>
-  </div>
-
-  <div class="card" data-series="IT" data-id="242">
-    <img src="images/it242.jpg" class="art-image" onclick="openLightbox('images/it242.jpg','Spectrum of Existence')">
-    <div class="code">N° IT242</div>
-    <div class="title">Spectrum of Existence</div>
-    <div class="series">Series: IT</div>
-  </div>
-
-  <div class="card" data-series="D" data-id="007">
-    <img src="images/d007.jpg" class="art-image" onclick="openLightbox('images/d007.jpg','DRACONIS')">
-    <div class="code">N° D007</div>
-    <div class="title">DRACONIS</div>
-    <div class="series">Series: D</div>
-  </div>
-
-</div>
