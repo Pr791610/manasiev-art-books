@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART & BOOKS SYSTEM</title>
+
+<style>
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:Arial;
+}
+
+/* HERO */
+.hero{
+  height:40vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+}
+
+/* SECTIONS */
+section{
+  padding:20px;
+}
+
+h2{
+  border-left:4px solid white;
+  padding-left:10px;
+}
+
+/* GALLERY */
+.grid{
+  columns:300px;
+  column-gap:15px;
+}
+
+.card{
+  break-inside:avoid;
+  margin-bottom:15px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#111;
+}
+
+.card img{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+a.btn{
+  display:block;
+  margin:8px 0;
+  padding:12px;
+  background:#1a1a1a;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">ART & BOOKS</div>
+
+<section id="gallery">
+<h2>GALLERY</h2>
+<div class="grid" id="imgGrid"></div>
+</section>
+
+<section id="payments">
+<h2>PAYMENTS (STRIPE)</h2>
+</section>
+
+<section id="wise">
+<h2>WISE</h2></section>
+
+<section id="github">
+<h2>GITHUB</h2></section>
+
+<section id="apps">
+<h2>APPS</h2></section>
+
+<script>
+
+/* =========================
+   FULL YOUR DATA
+   ========================= */
+const DATA = [
+
+"https://photos.app.goo.gl/K6FJDSuc38LGfEtu6",
+"https://photos.app.goo.gl/TpxWzz44Cbg6aPhp8",
+"https://photos.app.goo.gl/5Ayiff1SDVoKoBzg6-",
+
+"https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
+"https://buy.stripe.com/28E8wQeq4aUWfFPa1xcjS00",
+"https://buy.stripe.com/4gM00kdm01kmctDgpVcjS01",
+"https://buy.stripe.com/4gM6oIa9Oe78eBL4HdcjS02",
+"https://buy.stripe.com/dRm5kE3Lq7IK2T3ehNcjS03",
+
+"https://buy.stripe.com/5kQcN62HmbZ02T31v1cjS04",
+
+"https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
+
+"https://github.com/Pr791610/art-books-sandbox-system",
+"https://github.com/Pr791610/manasiev-art-books",
+
+"https://agent-6a0e4f747--qr-art-vault-art-cod-collection.netlify.app",
+"https://art-books-cupon-valore.netlify.app",
+
+"https://www.nlb.mk/direct_payment"
+
+];
+
+/* =========================
+   AUTO SORT ENGINE
+   ========================= */
+
+const imgGrid = document.getElementById("imgGrid");
+
+DATA.forEach(url => {
+
+  // IMAGES
+  if(
+    url.includes("photos.app") ||
+    url.includes(".jpg") ||
+    url.includes(".png")
+  ){
+    const c = document.createElement("div");
+    c.className = "card";
+    c.innerHTML = `<img src="${url}">`;
+    imgGrid.appendChild(c);
+  }
+
+  // STRIPE
+  else if(url.includes("stripe")){
+    document.getElementById("payments").innerHTML +=
+      `<a class="btn" href="${url}" target="_blank">💳 Stripe Payment</a>`;
+  }
+
+  // WISE
+  else if(url.includes("wise")){
+    document.getElementById("wise").innerHTML +=
+      `<a class="btn" href="${url}" target="_blank">💰 Wise</a>`;
+  }
+
+  // GITHUB
+  else if(url.includes("github")){
+    document.getElementById("github").innerHTML +=
+      `<a class="btn" href="${url}" target="_blank">🧠 GitHub</a>`;
+  }
+
+  // APPS
+  else{
+    document.getElementById("apps").innerHTML +=
+      `<a class="btn" href="${url}" target="_blank">🔗 Link</a>`;
+  }
+
+});
+
+</script>
+
+</body>
+</html>
