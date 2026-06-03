@@ -1,360 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ART & BOOKS.w.c — PERSONAL MUSEUM</title>
+<title>MUSEUM PRO SYSTEM | FULL OS</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
+
 body{
-  margin:0;
-  background:#070707;
-  color:#fff;
-  font-family:Arial;
+font-family:Arial,Helvetica,sans-serif;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-  padding:45px;
-  text-align:center;
-  font-size:28px;
-  letter-spacing:4px;
-  background:#111;
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+height:100vh;
+width:240px;
+background:#0b0b0b;
+border-right:1px solid #222;
+padding:20px;
 }
 
-/* SUBTITLE */
-.sub{
-  text-align:center;
-  color:#aaa;
-  margin-top:-20px;
-  margin-bottom:20px;
-  font-size:13px;
+.sidebar h2{
+color:#d4af37;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.sidebar a{
+display:block;
+color:#fff;
+text-decoration:none;
+padding:10px;
+margin:6px 0;
+border-radius:8px;
+opacity:.8;
+cursor:pointer;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+color:#d4af37;
+opacity:1;
+}
+
+/* MAIN */
+.main{
+margin-left:240px;
+padding:20px;
+}
+
+.header{
+padding:20px;
+text-align:center;
+}
+
+.header h1{
+color:#d4af37;
+font-size:42px;
 }
 
 /* SEARCH */
-input{
-  width:90%;
-  display:block;
-  margin:20px auto;
-  padding:12px;
-  border-radius:8px;
-  border:none;
+.search{
+max-width:600px;
+margin:20px auto;
 }
 
-/* SECTION TITLE */
-h2{
-  margin-left:20px;
-  border-left:4px solid #fff;
-  padding-left:10px;
+.search input{
+width:100%;
+padding:14px;
+border-radius:10px;
+border:none;
+background:#111;
+color:#fff;
 }
 
-/* ART GRID */
+/* GRID */
 .grid{
-  columns:300px;
-  column-gap:15px;
-  padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
 }
 
-/* CARD */
 .card{
-  background:#151515;
-  margin-bottom:15px;
-  border-radius:12px;
-  overflow:hidden;
-  break-inside:avoid;
-  transition:0.3s;
-  cursor:pointer;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(212,175,55,.2);
+border-radius:14px;
+padding:20px;
+cursor:pointer;
+transition:.3s;
 }
 
 .card:hover{
-  transform:scale(1.02);
+transform:scale(1.03);
+border-color:#d4af37;
 }
 
-.card img{
-  width:100%;
-  cursor:pointer;
+.card h3{
+color:#d4af37;
 }
 
-/* TEXT BLOCK */
-.info{
-  padding:10px;
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
 }
 
-.code{
-  color:#9ad1ff;
-  font-weight:bold;
-  font-size:13px;
+.modal-content{
+background:#111;
+padding:30px;
+border-radius:12px;
+max-width:500px;
+width:90%;
+border:1px solid #333;
 }
 
-.title{
-  font-size:15px;
-  margin-top:5px;
+.close{
+float:right;
+cursor:pointer;
+color:#d4af37;
 }
 
-.subtitle{
-  font-size:12px;
-  color:#aaa;
+/* MOBILE */
+@media(max-width:768px){
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
 }
-
-/* BUTTON */
-.btn{
-  display:block;
-  padding:10px;
-  margin:6px;
-  text-align:center;
-  background:#1a1a1a;
-  color:#fff;
-  text-decoration:none;
-  border-radius:8px;
-  transition:0.3s;
+.main{
+margin-left:0;
 }
-
-.btn:hover{
-  background:#333;
-}
-
-/* LIGHTBOX */
-#lightbox{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.95);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  z-index:999;
-}
-
-#lightbox img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:10px;
-}
-
-#lightbox span{
-  margin-top:10px;
-  color:#ccc;
-}
-
-/* CLOSE BUTTON */
-.close-btn{
-  position:absolute;
-  top:20px;
-  right:30px;
-  color:#ccc;
-  font-size:28px;
-  font-weight:bold;
-  cursor:pointer;
-  z-index:1000;
-}
-
-.close-btn:hover{
-  color:#fff;
 }
 </style>
 </head>
 
 <body>
 
-<header>ART & BOOKS.w.c</header>
-<div class="sub">Personal Museum • Archive System • MK / IT / ITMK / D Collection</div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>MUSEUM PRO</h2>
+<a onclick="loadSection('D')">🎨 D ART</a>
+<a onclick="loadSection('MK')">📜 MK CERT</a>
+<a onclick="loadSection('ITMK')">📚 ITMK</a>
+<a onclick="loadSection('IT')">📖 IT BOOKS</a>
+<a onclick="loadSection('HUM')">🌍 HUM</a>
+<a onclick="loadSection('ARCHIVE')">🗂 ARCHIVE</a>
+</div>
 
-<input id="search" placeholder="Search ART / PAYMENTS / PROJECTS / APPS">
+<!-- MAIN -->
+<div class="main">
 
-<!-- ART -->
-<h2>ART ARCHIVE</h2>
-<div class="grid" id="art"></div>
+<div class="header">
+<h1>MUSEUM PRO SYSTEM</h1>
+<p>Full Digital Museum OS • MK • ITMK • D • HUM</p>
+</div>
 
-<!-- PAYMENTS -->
-<h2>COLLECTION / PAYMENTS</h2>
-<div id="payments"></div>
+<div class="search">
+<input type="text" id="search" placeholder="Search MK073, ITMK027, D001..." onkeyup="filterData()">
+</div>
 
-<!-- PROJECTS -->
-<h2>PROJECTS VAULT</h2>
-<div id="projects"></div>
+<div class="grid" id="grid"></div>
 
-<!-- APPS -->
-<h2>SYSTEM LINKS</h2>
-<div id="apps"></div>
+</div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox(event)">
-  <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
-  <img id="lightbox-img" alt="">
-  <span id="lightbox-title"></span>
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal()">✖</span>
+<div id="modalText"></div>
+</div>
 </div>
 
 <script>
 
-/* =========================
-   PERSONAL ART ARCHIVE (YOUR STYLE)
-========================= */
+const data = {
+D:[
+{id:"D001",title:"Artwork 001"},
+{id:"D002",title:"Artwork 002"}
+],
+MK:[
+{id:"MK073",title:"Certificate 073"}
+],
+ITMK:[
+{id:"ITMK027",title:"Coupon 027"}
+],
+IT:[
+{id:"IT001",title:"Book 001"}
+],
+HUM:[
+{id:"H001",title:"Human Project"}
+],
+ARCHIVE:[
+{id:"PDF",title:"Documents"},
+{id:"QR",title:"Codes"},
+{id:"STRIPE",title:"Payments"}
+]
+};
 
-const ART = [
-  {
-    img:"images/mk241.jpg",
-    code:"ITMK241",
-    title:"Значење и Живот",
-    subtitle:"La Conoscenza e la Vita • Dual Language Archive",
-    series:"ITMK"
-  },
-  {
-    img:"images/it242.jpg",
-    code:"IT242",
-    title:"Spectrum of Existence",
-    subtitle:"Abstract Energy Field Composition",
-    series:"IT"
-  },
-  {
-    img:"images/frozen.jpg",
-    code:"IT243",
-    title:"Frozen Memory",
-    subtitle:"Time • Ice • Light Structure",
-    series:"IT"
-  },
-  {
-    img:"images/flowers.jpg",
-    code:"IT244",
-    title:"Flowers of Silence",
-    subtitle:"Nature Memory / Emotional Contrast",
-    series:"IT"
-  },
-  {
-    img:"images/d007.jpg",
-    code:"D007",
-    title:"DRACONIS CORE",
-    subtitle:"Dark Archive / Symbolic System",
-    series:"D"
-  }
-];
+let current = "D";
 
-/* =========================
-   PLATFORM SYSTEM
-========================= */
-
-const DATA = [
-  /* PAYMENTS */
-  "https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
-  "https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
-
-  /* PROJECTS */
-  "https://github.com/Pr791610/art-books-sandbox-system",
-  "https://github.com/Pr791610/manasiev-art-books",
-
-  /* APPS */
-  "https://art-books-cupon-valore.netlify.app",
-  "https://qr-art-certificate-system.netlify.app"
-];
-
-/* =========================
-   UTILITY FUNCTIONS
-========================= */
-
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return text.replace(/[&<>"']/g, m => map[m]);
+function loadSection(sec){
+current = sec;
+render(data[sec]);
 }
 
-/* =========================
-   RENDER ART
-========================= */
+function render(items){
+const grid = document.getElementById("grid");
+grid.innerHTML = "";
 
-function renderArt(){
-  const artDiv = document.getElementById("art");
-  artDiv.innerHTML = "";
-  
-  ART.forEach(a => {
-    const card = document.createElement("div");
-    card.className = "card";
-    
-    const img = document.createElement("img");
-    img.src = a.img;
-    img.alt = a.title;
-    img.onclick = () => openLightbox(a.img, a.title);
-    
-    const info = document.createElement("div");
-    info.className = "info";
-    info.innerHTML = `
-      <div class="code">N° ${escapeHtml(a.code)}</div>
-      <div class="title">${escapeHtml(a.title)}</div>
-      <div class="subtitle">${escapeHtml(a.subtitle)}</div>
-    `;
-    
-    card.appendChild(img);
-    card.appendChild(info);
-    artDiv.appendChild(card);
-  });
-}
-renderArt();
-
-/* =========================
-   PLATFORM ENGINE
-========================= */
-
-function renderPlatform(filter = ""){
-  const payments = document.getElementById("payments");
-  const projects = document.getElementById("projects");
-  const apps = document.getElementById("apps");
-  
-  payments.innerHTML = "";
-  projects.innerHTML = "";
-  apps.innerHTML = "";
-
-  DATA
-    .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(url => {
-      let btn = document.createElement("a");
-      btn.className = "btn";
-      btn.href = url;
-      btn.target = "_blank";
-      btn.rel = "noopener noreferrer";
-
-      if(url.includes("stripe") || url.includes("wise")){
-        btn.textContent = "💳 Payment System";
-        payments.appendChild(btn);
-      }
-      else if(url.includes("github")){
-        btn.textContent = "🧠 Repository";
-        projects.appendChild(btn);
-      }
-      else{
-        btn.textContent = "🔗 Open System";
-        apps.appendChild(btn);
-      }
-    });
-}
-renderPlatform();
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-function openLightbox(img, title){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img;
-  document.getElementById("lightbox-title").textContent = title;
-}
-
-function closeLightbox(event){
-  if(event.target.id === "lightbox" || event.target.classList.contains("close-btn")){
-    document.getElementById("lightbox").style.display = "none";
-  }
-}
-
-/* =========================
-   SEARCH
-========================= */
-
-document.getElementById("search").addEventListener("input", e => {
-  renderPlatform(e.target.value);
+items.forEach(i=>{
+const div = document.createElement("div");
+div.className="card";
+div.innerHTML = `<h3>${i.id}</h3><p>${i.title}</p>`;
+div.onclick = ()=>openModal(i);
+grid.appendChild(div);
 });
+}
+
+function filterData(){
+const val = document.getElementById("search").value.toLowerCase();
+const items = data[current].filter(i=>i.id.toLowerCase().includes(val));
+render(items);
+}
+
+function openModal(item){
+document.getElementById("modalText").innerHTML = `
+<h2 style='color:#d4af37'>${item.id}</h2>
+<p>${item.title}</p>
+<p>Status: ACTIVE</p>
+`;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+// init
+render(data.D);
 
 </script>
 
