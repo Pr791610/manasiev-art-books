@@ -63,6 +63,7 @@ h2{
   overflow:hidden;
   break-inside:avoid;
   transition:0.3s;
+  cursor:pointer;
 }
 
 .card:hover{
@@ -105,6 +106,7 @@ h2{
   color:#fff;
   text-decoration:none;
   border-radius:8px;
+  transition:0.3s;
 }
 
 .btn:hover{
@@ -134,6 +136,22 @@ h2{
   margin-top:10px;
   color:#ccc;
 }
+
+/* CLOSE BUTTON */
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:30px;
+  color:#ccc;
+  font-size:28px;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:1000;
+}
+
+.close-btn:hover{
+  color:#fff;
+}
 </style>
 </head>
 
@@ -161,8 +179,9 @@ h2{
 <div id="apps"></div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+  <img id="lightbox-img" alt="">
   <span id="lightbox-title"></span>
 </div>
 
@@ -173,41 +192,41 @@ h2{
 ========================= */
 
 const ART = [
-{
-img:"images/mk241.jpg",
-code:"ITMK241",
-title:"Значење и Живот",
-subtitle:"La Conoscenza e la Vita • Dual Language Archive",
-series:"ITMK"
-},
-{
-img:"images/it242.jpg",
-code:"IT242",
-title:"Spectrum of Existence",
-subtitle:"Abstract Energy Field Composition",
-series:"IT"
-},
-{
-img:"images/frozen.jpg",
-code:"IT243",
-title:"Frozen Memory",
-subtitle:"Time • Ice • Light Structure",
-series:"IT"
-},
-{
-img:"images/flowers.jpg",
-code:"IT244",
-title:"Flowers of Silence",
-subtitle:"Nature Memory / Emotional Contrast",
-series:"IT"
-},
-{
-img:"images/d007.jpg",
-code:"D007",
-title:"DRACONIS CORE",
-subtitle:"Dark Archive / Symbolic System",
-series:"D"
-}
+  {
+    img:"images/mk241.jpg",
+    code:"ITMK241",
+    title:"Значење и Живот",
+    subtitle:"La Conoscenza e la Vita • Dual Language Archive",
+    series:"ITMK"
+  },
+  {
+    img:"images/it242.jpg",
+    code:"IT242",
+    title:"Spectrum of Existence",
+    subtitle:"Abstract Energy Field Composition",
+    series:"IT"
+  },
+  {
+    img:"images/frozen.jpg",
+    code:"IT243",
+    title:"Frozen Memory",
+    subtitle:"Time • Ice • Light Structure",
+    series:"IT"
+  },
+  {
+    img:"images/flowers.jpg",
+    code:"IT244",
+    title:"Flowers of Silence",
+    subtitle:"Nature Memory / Emotional Contrast",
+    series:"IT"
+  },
+  {
+    img:"images/d007.jpg",
+    code:"D007",
+    title:"DRACONIS CORE",
+    subtitle:"Dark Archive / Symbolic System",
+    series:"D"
+  }
 ];
 
 /* =========================
@@ -215,39 +234,62 @@ series:"D"
 ========================= */
 
 const DATA = [
+  /* PAYMENTS */
+  "https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
+  "https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
 
-/* PAYMENTS */
-"https://buy.stripe.com/9B65kE81Gd34gJTehNcjS0c",
-"https://wise.com/pay/r/jPLz1Rs0VI8H-n0",
+  /* PROJECTS */
+  "https://github.com/Pr791610/art-books-sandbox-system",
+  "https://github.com/Pr791610/manasiev-art-books",
 
-/* PROJECTS */
-"https://github.com/Pr791610/art-books-sandbox-system",
-"https://github.com/Pr791610/manasiev-art-books",
-
-/* APPS */
-"https://art-books-cupon-valore.netlify.app",
-"https://qr-art-certificate-system.netlify.app"
-
+  /* APPS */
+  "https://art-books-cupon-valore.netlify.app",
+  "https://qr-art-certificate-system.netlify.app"
 ];
+
+/* =========================
+   UTILITY FUNCTIONS
+========================= */
+
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
 
 /* =========================
    RENDER ART
 ========================= */
 
-const artDiv=document.getElementById("art");
-
 function renderArt(){
-  artDiv.innerHTML="";
-  ART.forEach(a=>{
-    artDiv.innerHTML+=`
-    <div class="card">
-      <img src="${a.img}" onclick="openLightbox('${a.img}','${a.title}')">
-      <div class="info">
-        <div class="code">N° ${a.code}</div>
-        <div class="title">${a.title}</div>
-        <div class="subtitle">${a.subtitle}</div>
-      </div>
-    </div>`;
+  const artDiv = document.getElementById("art");
+  artDiv.innerHTML = "";
+  
+  ART.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "card";
+    
+    const img = document.createElement("img");
+    img.src = a.img;
+    img.alt = a.title;
+    img.onclick = () => openLightbox(a.img, a.title);
+    
+    const info = document.createElement("div");
+    info.className = "info";
+    info.innerHTML = `
+      <div class="code">N° ${escapeHtml(a.code)}</div>
+      <div class="title">${escapeHtml(a.title)}</div>
+      <div class="subtitle">${escapeHtml(a.subtitle)}</div>
+    `;
+    
+    card.appendChild(img);
+    card.appendChild(info);
+    artDiv.appendChild(card);
   });
 }
 renderArt();
@@ -256,29 +298,37 @@ renderArt();
    PLATFORM ENGINE
 ========================= */
 
-function renderPlatform(filter=""){
-
-  document.getElementById("payments").innerHTML="";
-  document.getElementById("projects").innerHTML="";
-  document.getElementById("apps").innerHTML="";
+function renderPlatform(filter = ""){
+  const payments = document.getElementById("payments");
+  const projects = document.getElementById("projects");
+  const apps = document.getElementById("apps");
+  
+  payments.innerHTML = "";
+  projects.innerHTML = "";
+  apps.innerHTML = "";
 
   DATA
-  .filter(u=>u.toLowerCase().includes(filter.toLowerCase()))
-  .forEach(url=>{
+    .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
+    .forEach(url => {
+      let btn = document.createElement("a");
+      btn.className = "btn";
+      btn.href = url;
+      btn.target = "_blank";
+      btn.rel = "noopener noreferrer";
 
-    if(url.includes("stripe")||url.includes("wise")){
-      payments.innerHTML+=`<a class="btn" href="${url}" target="_blank">💳 Payment System</a>`;
-    }
-
-    else if(url.includes("github")){
-      projects.innerHTML+=`<a class="btn" href="${url}" target="_blank">🧠 Repository</a>`;
-    }
-
-    else{
-      apps.innerHTML+=`<a class="btn" href="${url}" target="_blank">🔗 Open System</a>`;
-    }
-
-  });
+      if(url.includes("stripe") || url.includes("wise")){
+        btn.textContent = "💳 Payment System";
+        payments.appendChild(btn);
+      }
+      else if(url.includes("github")){
+        btn.textContent = "🧠 Repository";
+        projects.appendChild(btn);
+      }
+      else{
+        btn.textContent = "🔗 Open System";
+        apps.appendChild(btn);
+      }
+    });
 }
 renderPlatform();
 
@@ -286,24 +336,26 @@ renderPlatform();
    LIGHTBOX
 ========================= */
 
-function openLightbox(img,title){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=img;
-  document.getElementById("lightbox-title").innerText=title;
+function openLightbox(img, title){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img;
+  document.getElementById("lightbox-title").textContent = title;
 }
 
-/* SEARCH */
-document.getElementById("search").addEventListener("input",e=>{
+function closeLightbox(event){
+  if(event.target.id === "lightbox" || event.target.classList.contains("close-btn")){
+    document.getElementById("lightbox").style.display = "none";
+  }
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+document.getElementById("search").addEventListener("input", e => {
   renderPlatform(e.target.value);
 });
 
-<script>
-function openLightbox(img,title){
-  document.getElementById("lightbox").style.display="flex";
-  document.getElementById("lightbox-img").src=img;
-  document.getElementById("lightbox-title").innerText=title;
-}
-  
 </script>
 
 </body>
